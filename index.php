@@ -32,7 +32,7 @@ function pickOneCard(array $deck) : array {
  * return array is the score, & the new deck
  */
 function deal(int $playerNo, array $deck) : array {
-    echo '<h2>Player ' . $playerNo . '</h2><section>';
+    echo '<h1>Player ' . $playerNo . '</h1><section>';
 
     $card1 = pickOneCard($deck);
     echo '<div class="card card1 ' . $card1[1] . '">' . $card1[0] . '<br>&' . $card1[1] . ';<br><span>&' . $card1[1] . ';</span></div>';
@@ -56,7 +56,7 @@ function deal(int $playerNo, array $deck) : array {
         $score = revalueAces($hand, $score);
     }
 
-    echo '</section><h2>' . $score . '</h2>';
+    echo '</section><h1>' . $score . '</h1>';
     if ($score > 21) {
         $score = 0;
     }
@@ -90,11 +90,11 @@ $deck = $play2[1];
 
 
 if ($score1 > $score2) {
-    echo '<h2>Player 1 wins!</h2>';
+    echo '<h1>Player 1 wins!</h1>';
 } elseif ($score1 < $score2) {
-    echo '<h2>Player 2 wins!</h2>';
+    echo '<h1>Player 2 wins!</h1>';
 } else {
-    echo '<h2>No-one wins!</h2>';
+    echo '<h1>No-one wins!</h1>';
 }
 ?>
 </body>
