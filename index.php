@@ -7,7 +7,7 @@
 <?php
 
 $suit = ['A' => 11, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10, 'J' => 10, 'Q' => 10, 'K' => 10];
-$deck = ['hearts' => $suit, 'diamonds' => $suit, 'clubs' => $suit, 'spades' => $suit];
+$deck = ['hearts' => $suit, 'diams' => $suit, 'clubs' => $suit, 'spades' => $suit];
 
 /*
  * Chooses a random card from the deck & removes it
@@ -35,13 +35,13 @@ function deal(int $playerNo, array $deck) : array {
     echo '<h2>Player ' . $playerNo . '</h2><section>';
 
     $card1 = pickOneCard($deck);
-    echo '<div class="card card1 ' . ' ' . $card1[1] . '">' . $card1[0] . '<br></div>';
+    echo '<div class="card card1 ' . $card1[1] . '">' . $card1[0] . '<br>&' . $card1[1] . ';<br><span>&' . $card1[1] . ';</span></div>';
     $score = $deck[$card1[1]][$card1[0]];
     $deck = $card1[2];
     $hand[] = $card1;
 
     $card2 = pickOneCard($deck);
-    echo '<div class="card card2 ' . ' ' . $card2[1] . '">' . $card2[0] . '<br></div>';
+    echo '<div class="card card2 ' . $card2[1] . '">' . $card2[0] . '<br>&' . $card2[1] . ';<br><span>&' . $card2[1] . ';</span></div>';
     $score += $deck[$card2[1]][$card2[0]];
     $deck = $card2[2];
     $hand[] = $card2;
@@ -49,7 +49,7 @@ function deal(int $playerNo, array $deck) : array {
 
     if ($score < 14) {
         $card3 = pickOneCard($deck);
-        echo '<div class="card card3 ' . ' ' . $card3[1] . '">' . $card3[0] . '<br></div>';
+        echo '<div class="card card3 ' . $card3[1] . '">' . $card3[0] . '<br>&' . $card3[1] . ';<br><span>&' . $card3[1] . ';</span></div>';
         $score += $deck[$card3[1]][$card3[0]];
         $deck = $card3[2];
         $hand[] = $card3;
