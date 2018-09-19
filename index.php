@@ -14,7 +14,7 @@ $deck = ['hearts' => $suit, 'diams' => $suit, 'clubs' => $suit, 'spades' => $sui
  *
  * @param array $deck is the deck
  *
- * return array is card value, card suit, & the new deck
+ * @return array is card value, card suit, & the new deck
  */
 function pickOneCard(array $deck) : array {
     $suit = array_rand($deck);
@@ -29,7 +29,7 @@ function pickOneCard(array $deck) : array {
  * @param int $playerNo is the player number
  * @param array $deck is the deck you draw from
  *
- * return array is the score, & the new deck
+ * @return array is the score, & the new deck
  */
 function deal(int $playerNo, array $deck) : array {
     echo '<h1>Player ' . $playerNo . '</h1><section>';
@@ -69,7 +69,7 @@ function deal(int $playerNo, array $deck) : array {
  * @param array $hand is the currently drawn cards
  * @param int $score is the current score
  *
- * return int is the new score
+ * @return int is the new score
  */
 function revalueAces(array $hand, int $score) : int {
     foreach ($hand as $x) {
