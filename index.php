@@ -5,7 +5,7 @@
 <body>
 <?php
 
-$suit = ['A' => 11, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10, 'J' => 10, 'Q' => 10, 'K' => 10];
+$suit = ['A' => 11, '2' => 2, '3' => 3, '4' => 4, '5' => 5, '6' => 6, '7' => 7, '8' => 8, '9' => 9, '10' => 10, 'J' => 10, 'Q' => 10, 'K' => 10];
 $deck = ['hearts' => $suit, 'diams' => $suit, 'clubs' => $suit, 'spades' => $suit];
 
 /*
@@ -17,7 +17,7 @@ $deck = ['hearts' => $suit, 'diams' => $suit, 'clubs' => $suit, 'spades' => $sui
  */
 function pickOneCard(array $deck) : array {
     $suit = array_rand($deck);
-    $card = array_rand($deck[$suit]);
+    $card = (string)array_rand($deck[$suit]);
     unset($deck[$suit][$card]);
     return [$card, $suit, $deck];
 }
