@@ -1,7 +1,6 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
 <?php
@@ -35,13 +34,13 @@ function deal(int $playerNo, array $deck) : array {
     echo '<h1>Player ' . $playerNo . '</h1><section>';
 
     $card1 = pickOneCard($deck);
-    echo '<div class="card card1 ' . $card1[1] . '">' . $card1[0] . '<br>&' . $card1[1] . ';<br><span>&' . $card1[1] . ';</span></div>';
+    echo '<div class="card card1 ' . $card1[1] . '">' . $card1[0] . '<br>&' . $card1[1] . ';<span>&' . $card1[1] . ';</span></div>';
     $score = $deck[$card1[1]][$card1[0]];
     $deck = $card1[2];
     $hand[] = $card1;
 
     $card2 = pickOneCard($deck);
-    echo '<div class="card card2 ' . $card2[1] . '">' . $card2[0] . '<br>&' . $card2[1] . ';<br><span>&' . $card2[1] . ';</span></div>';
+    echo '<div class="card card2 ' . $card2[1] . '">' . $card2[0] . '<br>&' . $card2[1] . ';<span>&' . $card2[1] . ';</span></div>';
     $score += $deck[$card2[1]][$card2[0]];
     $deck = $card2[2];
     $hand[] = $card2;
@@ -49,7 +48,7 @@ function deal(int $playerNo, array $deck) : array {
 
     if ($score < 14) {
         $card3 = pickOneCard($deck);
-        echo '<div class="card card3 ' . $card3[1] . '">' . $card3[0] . '<br>&' . $card3[1] . ';<br><span>&' . $card3[1] . ';</span></div>';
+        echo '<div class="card card3 ' . $card3[1] . '">' . $card3[0] . '<br>&' . $card3[1] . ';<span>&' . $card3[1] . ';</span></div>';
         $score += $deck[$card3[1]][$card3[0]];
         $deck = $card3[2];
         $hand[] = $card3;
@@ -97,4 +96,6 @@ if ($score1 > $score2) {
     echo '<h1>No-one wins!</h1>';
 }
 ?>
+
 </body>
+</html>
